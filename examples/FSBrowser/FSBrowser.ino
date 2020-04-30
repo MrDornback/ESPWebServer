@@ -1,7 +1,7 @@
 /* 
   FSWebServer - Example WebServer with SPIFFS backend for esp8266
   Copyright (c) 2015 Hristo Gochkov. All rights reserved.
-  This file is part of the ESP8266WebServer library for Arduino environment.
+  This file is part of the ESPWebServer library for Arduino environment.
  
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -24,7 +24,7 @@
 */
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
-#include <ESP8266WebServer.h>
+#include <ESPWebServer.h>
 #include <ESP8266mDNS.h>
 #include <FS.h>
 
@@ -34,7 +34,7 @@ const char* ssid = "wifi-ssid";
 const char* password = "wifi-password";
 const char* host = "esp8266fs";
 
-ESP8266WebServer server(80);
+ESPWebServer server(80);
 //holds the current upload
 File fsUploadFile;
 

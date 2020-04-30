@@ -4,14 +4,14 @@
 
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
-#include <ESP8266WebServer.h>
+#include <ESPWebServer.h>
 #include <ESP8266mDNS.h>
 
 const char* host = "esp8266-webupdate";
 const char* ssid = "........";
 const char* password = "........";
 
-ESP8266WebServer server(80);
+ESPWebServer server(80);
 const char* serverIndex = "<form method='POST' action='/update' enctype='multipart/form-data'><input type='file' name='update'><input type='submit' value='Update'></form>";
 
 void setup(void){

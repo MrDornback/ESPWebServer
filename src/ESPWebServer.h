@@ -1,5 +1,5 @@
 /*
-  ESP8266WebServer.h - Dead simple web-server.
+  ESPWebServer.h - (formerly ESP8266WebServer) Dead simple web-server.
   Supports only one simultaneous client, knows how to handle GET and POST.
 
   Copyright (c) 2014 Ivan Grokhotkov. All rights reserved.
@@ -18,11 +18,12 @@
   License along with this library; if not, write to the Free Software
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
   Modified 8 May 2015 by Hristo Gochkov (proper post and file upload handling)
+  Modified 29 April 2020 by Alex Dornback (name change ESP8266WebServer to  ESPWebServer)
 */
 
 
-#ifndef ESP8266WEBSERVER_H
-#define ESP8266WEBSERVER_H
+#ifndef ESPWEBSERVER_H
+#define ESPWEBSERVER_H
 
 #include <functional>
 #include <ESP8266WiFi.h>
@@ -46,7 +47,7 @@ enum HTTPClientStatus { HC_NONE, HC_WAIT_READ, HC_WAIT_CLOSE };
 #define CONTENT_LENGTH_UNKNOWN ((size_t) -1)
 #define CONTENT_LENGTH_NOT_SET ((size_t) -2)
 
-class ESP8266WebServer;
+class ESPWebServer;
 
 typedef struct {
   HTTPUploadStatus status;
@@ -64,12 +65,12 @@ namespace fs {
 class FS;
 }
 
-class ESP8266WebServer
+class ESPWebServer
 {
 public:
-  ESP8266WebServer(IPAddress addr, int port = 80);
-  ESP8266WebServer(int port = 80);
-  ~ESP8266WebServer();
+  ESPWebServer(IPAddress addr, int port = 80);
+  ESPWebServer(int port = 80);
+  ~ESPWebServer();
 
   void begin();
   void handleClient();
@@ -185,4 +186,4 @@ protected:
 };
 
 
-#endif //ESP8266WEBSERVER_H
+#endif //ESPWEBSERVER_H

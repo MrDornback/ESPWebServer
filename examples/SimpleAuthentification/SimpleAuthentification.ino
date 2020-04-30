@@ -1,11 +1,11 @@
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
-#include <ESP8266WebServer.h>
+#include <ESPWebServer.h>
 
 const char* ssid = "........";
 const char* password = "........";
 
-ESP8266WebServer server(80);
+ESPWebServer server(80);
 
 //Check if header is present and correct
 bool is_authentified(){

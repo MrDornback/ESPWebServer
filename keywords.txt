@@ -6,7 +6,7 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-ESP8266WebServer	KEYWORD1
+ESPWebServer	KEYWORD1
 HTTPMethod	KEYWORD1
 
 #######################################

@@ -5,7 +5,7 @@
 
 class FunctionRequestHandler : public RequestHandler {
 public:
-    FunctionRequestHandler(ESP8266WebServer::THandlerFunction fn, ESP8266WebServer::THandlerFunction ufn, const String &uri, HTTPMethod method)
+    FunctionRequestHandler(ESPWebServer::THandlerFunction fn, ESPWebServer::THandlerFunction ufn, const String &uri, HTTPMethod method)
     : _fn(fn)
     , _ufn(ufn)
     , _uri(uri)
@@ -30,7 +30,7 @@ public:
         return true;
     }
 
-    bool handle(ESP8266WebServer& server, HTTPMethod requestMethod, String requestUri) override {
+    bool handle(ESPWebServer& server, HTTPMethod requestMethod, String requestUri) override {
         (void) server;
         if (!canHandle(requestMethod, requestUri))
             return false;
@@ -39,7 +39,7 @@ public:
         return true;
     }
 
-    void upload(ESP8266WebServer& server, String requestUri, HTTPUpload& upload) override {
+    void upload(ESPWebServer& server, String requestUri, HTTPUpload& upload) override {
         (void) server;
         (void) upload;
         if (canUpload(requestUri))
@@ -47,8 +47,8 @@ public:
     }
 
 protected:
-    ESP8266WebServer::THandlerFunction _fn;
-    ESP8266WebServer::THandlerFunction _ufn;
+    ESPWebServer::THandlerFunction _fn;
+    ESPWebServer::THandlerFunction _ufn;
     String _uri;
     HTTPMethod _method;
 };
@@ -76,7 +76,7 @@ public:
         return true;
     }
 
-    bool handle(ESP8266WebServer& server, HTTPMethod requestMethod, String requestUri) override {
+    bool handle(ESPWebServer& server, HTTPMethod requestMethod, String requestUri) override {
         if (!canHandle(requestMethod, requestUri))
             return false;
 
